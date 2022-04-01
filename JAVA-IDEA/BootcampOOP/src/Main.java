@@ -1,6 +1,4 @@
-import dominio.Conteudo;
-import dominio.Curso;
-import dominio.Mentoria;
+import dominio.*;
 
 import java.time.LocalDate;
 
@@ -30,8 +28,33 @@ public class Main {
         //filha por meio de uma classe pai...
         Conteudo conteudo = new Curso();
 
+        // exemplo para interligar as classes...
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome(" bootcamp java dev...");
+        bootcamp.getConteudos().add(curso);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev primeiroDEV = new Dev();
+        primeiroDEV.setNome("EU");
+        Dev segundoDEV = new Dev();
+        segundoDEV.setNome("CArlos Alberto");
+
+        //se inscrever no bootcamp;
+        primeiroDEV.inscreverBoootcamp(bootcamp);
+        segundoDEV.inscreverBoootcamp(bootcamp);
+
+        System.out.println("CONTEUDOS INSCRITOS 1 dev" + primeiroDEV.getConteudosInscritos());
+
+        System.out.println("CONTEUDOS INSCRITOS 2 dev" + segundoDEV.getConteudosInscritos());
 
 
+        // concluindo mentoria e curso
+        segundoDEV.progredir();
+
+        System.out.println("CONTEUDOS INSCRITOS 1 dev" + primeiroDEV.getConteudosInscritos());
+        System.out.println("CONTEUDOS INSCRITOS 2 dev" + segundoDEV.getConteudosInscritos());
+        System.out.println("CONTEUDOS INSCRITOS 1 dev" + primeiroDEV.getConteudosConcluidos());
+        System.out.println("CONTEUDOS INSCRITOS 2 dev" + segundoDEV.getConteudosConcluidos());
 
 
     }

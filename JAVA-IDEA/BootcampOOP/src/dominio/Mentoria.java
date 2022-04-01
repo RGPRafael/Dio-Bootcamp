@@ -11,7 +11,7 @@ public class Mentoria extends Conteudo { // filha de conteudo
 
     @Override
     public String toString() {
-        return "Curso{" +
+        return "Mentoria{" +
                 "titulo='" + getTitulo() + '\'' +
                 ", descrição='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
